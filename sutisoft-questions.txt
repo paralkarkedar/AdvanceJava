@@ -1,0 +1,316 @@
+Core java
+---------------
+
+Exceptions and it’s types with examples and one code for each like arithmetic exception one code , null pointer exception one code like this you need to prepare .
+
+- What is inner class 
+- Inner class syntax 
+- Inner class program 
+- If you have two constructors in a class which constructor is execute first parameterized or default 
+- Difference between method overloading and method overriding 
+- Difference between abstract class and interface
+- Difference Hash table and hashmap
+- Difine constructor overloading 
+- Difference between String buffer and string builder 
+- Program for print the duplicate character 
+- hashset vs treeset
+- arraylist vs Linkedlist
+- functional interface
+- how to declare functional interface 
+- perfomace point of which is string buffer or builder
+- Create a map add elements iterate and print only keys and values one by one 
+- What is Entry in map
+- List vs set
+- Is arraylist synchronised if not can we make it synchronised.
+- Types of linkedlist
+- Linkedlist vs arraylist
+- Comparator vs Comparable
+- What is collections class and what are utility methods present.
+- JDK VS JRE
+- Types of memories 
+- What is multithreding 
+- Ways to create thread
+- What is synchronisation how many ways we can apply synchronization
+- Static synchronisation 
+- What is exception handling how to handle exception 
+- Checked and unchecked exception
+- Throws vs throw
+- Custom exceptions
+- What is string 
+- Way to create string 
+- SCP in string
+- Arrays program to print multiple missing elements from array
+- May be expect one pattern 
+- types of objects mutable and immutable 
+- diff btw string string builder string buffer
+- ⁠what is thread and it’s life cycle
+- ⁠basic three programs from core java 
+- ⁠diff bw try catch finally throw
+- ⁠diff bw throws and throw 
+- ⁠array manipulation programs mean adding element and sum of the array elements like that
+- ⁠removing duplicates form the string using stream api 
+- ⁠collections programs you need to write based on required output by using stream api and foreach loop to  
+  retrieve elements mainly map and list 
+- ⁠functional interface and lambda expression 
+- ⁠access modifiers and explain each 
+- ⁠what is the use of static keyword 
+- ⁠what is method reference 
+- ⁠which version of jdk you are using , why not latest version you are using ?
+- ⁠types of memories ? Mainly scp in strings and heap 
+- Internal implementation of set
+- Compile time polymorphism and run time polymorphism with example programs 
+- Implementation of linkedlist 
+- Arraylist vs linkedlist
+- Access modifiers in java
+- Final keyword vs static keyword 
+- Use of final keyword 
+- Static block
+- Difference between hashmap and treemap 
+- Program to eliminate duplicate characters from string 
+- What is abstract class 
+- What is serialization 
+- Difference between exception and error 
+- Types of exceptions
+- Life cycle of a thread
+
+- Making arraylist as synchronized?
+
+import java.util.*;
+public class Test 
+{
+    public static void main(String[] args) 
+	{
+        // Create an ArrayList
+        List<String> arrayList = new ArrayList<String>();
+
+        // Make the ArrayList synchronized
+        List<String> list = Collections.synchronizedList(arrayList);
+
+        // Adding elements to the synchronized list
+        list.add("java");
+        list.add("reactjs");
+        list.add("oracle");
+
+        // Display the elements in the synchronized list
+        System.out.println(list);       
+    }
+}
+
+
+JDBC
+---------------
+
+- Jdbc connection objects and types 
+- ⁠steps to develop jdbc application
+- ⁠types of statements objects
+- ⁠what is resultset 
+- ⁠types of drivers and which type you r using 
+- ⁠jdbc connection pool 
+- ⁠version of your oracle 
+- ⁠what is parsed query ?
+
+- Write a jdbc program to display data in list .
+
+Student table
+-------------
+create table student (sid number(3),sname varchar2(10),sadd varchar2(12));
+insert into student values(103,'ravi','delhi');
+insert into student values(101,'alan','vizag');
+insert into student values(102,'Jose','pune');
+commit;
+
+Student.java
+------------
+package com.ihub.www;
+
+public class Student 
+{
+	private int id;
+    private String name;
+    private String add;
+
+    public Student(int id, String name, String add) {
+        this.id = id;
+        this.name = name;
+        this.add = add;
+    }
+
+	public int getId() {
+		return id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public String getAdd() {
+		return add;
+	}
+
+   
+}
+
+
+SelectApp.java
+---------------
+package com.ihub.www;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
+import java.util.stream.Collectors;
+public class SelectApp 
+{
+	 public static void main(String[] args) 
+		{
+	        String url = "jdbc:oracle:thin:@localhost:1521:XE";
+	        String username = "system";
+	        String password = "admin";
+
+	        String sql = "select * from student";
+
+	        List<Student> students = new ArrayList<>();
+
+	        try (Connection conn = DriverManager.getConnection(url, username, password);
+	             PreparedStatement stmt = conn.prepareStatement(sql);
+	             ResultSet rs = stmt.executeQuery()) 
+	        {
+
+	            while (rs.next()) 
+				{
+	                int id = rs.getInt(1);
+	                String name = rs.getString(2);
+	                String add = rs.getString(3);
+	                students.add(new Student(id, name, add));
+	            }
+
+	        } 
+	        catch (SQLException e) 
+	        {
+	            e.printStackTrace();
+	        }
+
+	        //sorting of an object
+			List<Student> newList=students.stream().sorted(Comparator.comparingInt(Student::getId)).collect(Collectors.toList());
+			
+			//reading the data from ArrayList
+			newList.forEach(student -> System.out.println(student.getId()+" "+student.getName()+" "+student.getAdd()));
+
+	    }
+}
+
+
+Servlets
+-----------
+
+- Diff bw servletconfig and servletcontext
+- ⁠diff bw application and session scope
+- ⁠types of functional scopes 
+- ⁠diff bw httpservlet and genricservlet 
+- ⁠types of methodology which one is secure why?
+
+- ⁠how we will get values from the form. 
+
+
+JSP
+-----
+
+- Types of tags prepare all types of tags 
+- ⁠types of implicit objects and its uses 
+- ⁠mainly they will ask session application request response 
+- ⁠diff bw jsp and servlets 
+
+Spring boot and spring
+---------------------
+- spring MVC architecture 
+- Spring vs springboot
+- Bean life cycle 
+- @component vs @service annotation 
+- Parent annotation in springboot 
+- define setter injection and constructor injection 
+- why we use injections
+- Explain some Spring boot annotations 
+- @ Component vs @service 
+- @controller vs @restcontroller
+- @autowired annotations why we use
+- What is the use of dependency injection 
+- Explain bean architecture 
+- How to define the scope of bean. 
+- What is method injection 
+- explain spring modules
+- explain post get putch delete types of http requests 
+- ⁠components of spring boot
+- ⁠explain @controller and test controller diff 
+- ⁠http requests mappings like getmapping post mapping like that 
+- ⁠spring architecture with figure 
+- ⁠how you handle exceptions in spring 
+- ⁠mainly focus each and every annotations present in both spring and spring boot 
+- ⁠mvc explain ?
+- ⁠what is idempotent? 
+- @lazy annotation 
+- Steps to connect spring with database
+- Spring Boot flow architecture 
+- @GeneratedValue and what strategies it will take
+- @Component vs @Service
+- What are stereo type annotations 
+- @controller
+- @Table
+- @Entity
+- @Data
+- In @controller what annotations are there 
+- What is auto configuration
+- What is dependency injection and types
+- What is rest controller 
+- What is pom.xml file
+- What is application.properties file 
+- What is @configuration annotation 
+- Spring data jpa 
+ 
+
+Oracle
+--------------
+
+- mainly focus on joins they will give two queries to write 
+- ⁠update query 
+
+Q) Write a query to display number of employees working a department?
+
+SELECT d.dept_name, COUNT(e.emp_id) AS num_employees
+FROM employees e
+JOIN departments d ON e.dept_id = d.dept_id
+GROUP BY d.dept_name;
+
+
+
+React JavaScript html css
+--------------------------
+
+- types of css 
+- ⁠diff bw functional and class component 
+- ⁠diff bw let var const 
+- ⁠hooks in react 
+- ⁠diff bw props and states 
+- ⁠react fragment
+- ⁠commands using to create and run the application 
+- ⁠what is bootstrap ?
+- Class component vs function component 
+- Component life cycle
+- State 
+- What is useEffect
+- React routing
+- What we import in react routing 
+- BrowserRouter vs HashRouter
+- What is callback function 
+- Recursion in JavaScript
+- About anchor tag
+- What is _blank
+- Asynchronous http request
+- Hooks in react js
+
+
+ 

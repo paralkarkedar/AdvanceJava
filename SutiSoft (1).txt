@@ -1,0 +1,82 @@
+Company : SutiSoft
+------------------
+
+Core Java 
+---------
+1. How do you reed from & write to a file in java ?
+2. What is diff b/w checked and unchecked exception ?
+3. Explain JVM Architecture
+4. purpose of try , catch , finally and throw ?
+5. what are memory leaks in java , how can you prevent them ?
+6. what is map intrface in collection , insert data into hashmap & iterate the data then display the key & values of hashmap.
+7. diff b/w List & Set .
+8. diff b/w Comparator & Comparable ?
+9. write a program to map employee id(key) , employee name(value) from list of employee using stream API .
+10. diff b/w URL Encoding & URL Rewriting ?
+
+Adv. Java
+---------
+1. diff b/w <%@include%> and <jsp:include> 
+2. what are jsp directives & explain all type ?
+3. explain the contexttype & pageEncoding attributes in jsp page directive ?
+4. what is session implicite object & how is it diff. from the application object ?
+
+
+SpringBoot
+----------
+1. what is front controller class of spring MVC ?
+2. how can you handle exception in Spring boot
+3. how can you create a restful API using spring boot
+4. what are the main features of spring boot
+5. difference between @component , @service , @repository , @component .
+6. what is the application context in Spring boot
+7. name the annotation used to handle different type of incoming http request method .
+8. establish the database connection by using spring boot
+9. explain patch , put , get , post method
+10. explain @restController @getMapping @postMapping .
+
+
+JS/jQuery / CSS / react.js
+--------------------------
+1. what is the use of web page and Bible in react
+2. how to call the backend controller using react
+3. explain different between lat , cost , var
+4. how many ways we can get the value of an HTTP element using JS and jQuery
+5. what is the asynchronised http calls
+6. explain the purpose of $(document).ready() in jQuery.
+7. difference between class and ID selector in CSS
+8. how can you select an element with jQuery
+9. what is the use of jsx in react
+
+
+program 
+-------
+1. WAP to sum all number from integer array ?
+2. i/p : "1234"
+   o/p : it is a integer 
+   i/p : "Hello Word " 
+   o/p : it is string 
+3. print the date in specific formate (mm-dd-yyyy yyyy--mm-dd)
+4. WAP palindome using recursion ?
+
+ 
+  
+ 
+  
+
+
+
+
+
+
+
+
+
+
+
+
+     
+
+
+
+ 
